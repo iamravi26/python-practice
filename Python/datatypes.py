@@ -10,6 +10,9 @@
 
 # String
 
+from ctypes import addressof
+
+
 s = 'hi how are youHHH'
 
 a='kar lenge tu tension na le'
@@ -86,6 +89,23 @@ round(8.5)
 
 a = [1,2,3,4,5,4,4]
 type(a)
+id(a)
+id(a[0])
+a[0]=20
+a[0]
+id(a[0])
+id(a)
+
+
+a = {1,2,3,4,5,4,4}
+print(a) #a will not take repeated number
+type(a)
+id(a)
+id(a[0])
+# a[0]=20#if can not do this then hows the set is mutabe? #can not be done in tuple
+a[0]
+id(a[0])
+id(a)
 
 dir(a)
 a.append(5)
@@ -185,24 +205,22 @@ for i in range(0,len(a)):
 # tuple
 
 a = (1,2,3,8,6,7)
+id(a)
+print(a)
+id(a[0])
+a[0]=80
 a.count(1)
 a.index(1)
-sorted(a)
-a.sort()
+sorted(a)#tuple me sorted use karana hota hai
+a.sort()#this will yrow error
 
 id(a)
 b = a
+
 id(b)
-
-
-
-
-
-
-
-
-
-
+a=([1,2,3],[4,6,7])
+type(a)
+a[0].append(90)
 
 
 # 
@@ -400,3 +418,49 @@ for x in a.values():
 for x in a.items():
     print(x)
 
+l1=[1,2,3,]
+l2=[10,20,30,40,50]
+l3='python'
+
+list(zip(l1,l2,l3))
+
+l=[2,3,4]
+a=[]
+for x in l:
+    a.append(x**2)
+
+print(a)   #output [4, 9, 16]
+
+[x**2 for x in l]  #output [4, 9, 16]
+
+
+l1=[1,2,3,4,5]
+l2=[11,22,33,44,55]
+a=list(zip(l1,l2))
+c=[x+y for x,y in a] #output [12, 24, 36, 48, 60]
+
+#or
+list(map(lambda x,y:x+y,l1,l2)) #[12, 24, 36, 48, 60]
+
+l=[1,2,3,4]
+[x for x in l if x%2==0]
+
+a=range(10)
+list(filter(lambda x:x<25,map(lambda y:y**2,a)))
+#alternative
+[x**2 for x in a if x**2<25]
+
+
+x=input("enter the username")
+print('user name is:'+x)
+
+
+d={'p':1,'y':2,'t':3,'h':4}
+a,*b=d
+print(a)
+print(*b)
+d1={'p':1,'y':2}
+d2={'t':3,'h':4}
+d3={'h':5,'o':6,'n':7}
+d={**d1,**d2,**d3}
+type(d)

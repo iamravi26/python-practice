@@ -1,4 +1,7 @@
 #variables 
+from re import M
+
+
 x,y,z= 3  #"ravi",'dekh le' #we can declare variable in a line as well but uday ne bola the it act as tuple(varify)
 
 
@@ -31,3 +34,13 @@ print(c.split())
 print(c[-6:-2])
 print(c.upper())
 print(c.lower())
+
+
+class MyClass:
+  pass
+
+MyClass.__name__
+type(MyClass)
+isinstance(MyClass,type)
+MyClass()
+

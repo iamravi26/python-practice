@@ -1,3 +1,6 @@
+from tkinter.tix import Tree
+
+
 def process(s):
     print(id(s))
     s = s + ' world'
@@ -102,22 +105,31 @@ fun = lambda : 'hii'
 fun()
 
 
+# break,continue,pass
 
 
 
 
+# context menager
+with open('tetx.txt','a') as f:
+    f.write("chal try karate hai \n")
 
+with open('tetx.txt','r') as f:
+    f.write("hdsghas")
 
+f = open('tetx.txt','r')
+f.read()
+f.close()
 
+f = open('tetx.txt','r')
+f.readline()
+f.close()
 
-
-
-
-
-
-
-
-
+with open('tetx.txt','r') as f:
+    v = True
+    while v:
+        v = f.readline()
+        print(v)
 
 
 

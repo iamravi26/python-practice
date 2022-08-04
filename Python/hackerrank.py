@@ -23,8 +23,10 @@ for i in range(1,n+1,1):
     data.update({'name':old+new})
 print(data['name'])
 
+from codecs import latin_1_decode
 from collections import defaultdict
 from itertools import count
+from re import X
 
 from numpy import append
 n=10
@@ -145,3 +147,145 @@ def myfunc(n):
 mydoubler = myfunc(2)
 
 print(mydoubler(11))
+
+
+#printing matrix
+n=input('enter n')
+print(n)
+m=input('enter m')
+print(m)
+
+
+import numpy
+print( numpy.eye(3,3, k = 0))
+
+
+l = []
+dir(zip())
+for i in range(10):
+    for j in range(10,20):
+        if i %2 ==0 and j %2 == 0:
+            l.append(i**j)
+
+
+# Iterable
+l = [i**2 for i in range(10) if i %2 ==0]
+l = [i**2 for i in range(10) if i %2 ==0]
+for i in l:
+    print(i)
+
+l = [i**j for i in range(10) for j in range(10,20) if  i %2 ==0 and j %2 == 0]
+r = range(10)
+for i in r:
+    print(i)
+#generator
+l = (i*j for i in range(1,10) for j in range(1,11))
+l.__next__()
+
+
+# enumerator
+r = enumerate(range(10,20))  
+for i,j in r:  #i-index  j- value : r could be any sequnce:- list,set,dict,tuple
+    print(i,j)
+
+
+r = map(lambda x:x**2,range(10))
+for i in r:
+    print(i)
+
+r = filter(lambda x:x%2 == 0,range(10))
+dir(r)
+for i in r:
+    print(i)
+
+r = zip(range(10),range(10))
+for i in r:
+    print(i)
+
+
+a = 10
+def outer():
+    global a
+    b = 10
+    def inner():
+        nonlocal b
+        global a
+        c =10
+        b = 100
+        print(b)
+
+def fun():
+    aaa = 10
+
+fun()
+aaa
+
+
+
+
+
+#find the runner up score
+a=[4,8,9,3,4,6]
+a.sort(reverse=False) #acending
+print(a[-2])
+
+#by taking multiple input rom the user 
+a=list(input().split())
+l=list(set(a))
+l.sort(reverse=False) 
+print(l[-2])   
+
+#q2] sum all the number
+num=[1,2,3,4]
+sum=0
+for i in num:
+    sum=sum+i
+
+print(sum)
+
+#Q3]multiply all the number
+mul=1
+for i in num:
+    mul=mul*i
+print(mul)
+
+#4]find largest and the smallest
+l=[2,45,67,89,4,5,6,89]
+a=list(set(l))
+a.sort(reverse=False)
+print("largest=",a[-1])
+print("smallest=",a[0])
+
+#5] Write a Python program to get a list, sorted in increasing order by 
+# the last element in each tuple from a given list of non-empty tuples.
+
+a=[(1,2),(3,1),(4,6),(2,3)]
+a.sort(key=lambda x:x[1])
+
+
+
+
+#6]Write a Python program to check a list is empty or not
+
+a=[1,2]
+print('list is empty')if a==[] else print("list is not empty")
+
+#7]Write a Python function that takes two lists and returns True if they have at least one common member. 
+
+a=[1,2,3,4,5]
+b=[6,2,7,8,9,10]
+for i in a:
+    for k in b:
+        if i==k:
+            print("true")
+            break
+        else:
+            continue
+
+#8] Write a Python program to print a specified list after removing the 0th, 4th and 5th elements.
+
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+color = [x for (i,x) in enumerate(color) if i not in (0,4,5)]
+print(color)
+
+#9] 
